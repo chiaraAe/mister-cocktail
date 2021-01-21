@@ -1,8 +1,28 @@
-<h1>Cocktails</h1>
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.png' %>)">
+  <div class="container">
+    <h1>SAVE WATER</h1>
+    <h1>DRINK COCKTAILS</h1>
+    <%= link_to new_cocktail_path do %>
+      <i class="fas fa-cocktail"></i>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "ADD YOUR FAVORIT COCKTAIL", new_cocktail_path  %>
+<h1>test</h1>
+
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-body">
+      <img src="https://source.unsplash.com/random" class="card-img-top" alt="...">
+      <h2 class="card-title"><%= cocktail.name %></h2>  
+      <button type="button" class="btn btn-outline-primary"><%= link_to "More Information", cocktail_path(cocktail) %></button>
+    </div>
+  <% end %>
+  <div class="card-body">
+      <%= link_to new_cocktail_path do %>
+        <i class="fas fa-cocktail"></i>
+      <% end %>
+      <h2 class="card-add">Add your Drink</h2>  
+    </div>
+</div>
+

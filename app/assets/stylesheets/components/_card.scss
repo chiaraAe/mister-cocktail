@@ -1,0 +1,27 @@
+.cards {
+    width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+  }
+
+.card-body {
+  border-style: solid;
+  border-width: 2px;
+  border-color: lightgrey;
+  border-radius: 5px;
+}
+
+.card-title {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-card {
+  background-color: lightgrey;
+  width: auto; 
+}
+
