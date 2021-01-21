@@ -8,7 +8,8 @@
   </div>
 </div>
 
-<h1>test</h1>
+
+
 
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
@@ -18,11 +19,14 @@
       <button type="button" class="btn btn-outline-primary"><%= link_to "More Information", cocktail_path(cocktail) %></button>
     </div>
   <% end %>
-  <div class="card-body">
-      <%= link_to new_cocktail_path do %>
-        <i class="fas fa-cocktail"></i>
-      <% end %>
-      <h2 class="card-add">Add your Drink</h2>  
+  <div class="card-body card-add">
+    <div class="add">
+        <%= link_to new_cocktail_path do %>
+          <i class="fas fa-cocktail"></i>
+        <% end %>
+        <h2 class="card-add">Add your Drink</h2>  
     </div>
+
+  </div>
 </div>
 

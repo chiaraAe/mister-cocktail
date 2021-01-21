@@ -6,24 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Clear database of Ingredients"
+puts "Cleaning database..."
 Ingredient.destroy_all
-Cocktail.destroy_all
-puts "Database cleared"
-
-5.times do 
-  ingredient = Ingredient.create(
-    name: Faker::Food.ingredient
-  )
-  puts "ingredient #{ingredient.id} created"
-end 
-
-5.times do 
-  cocktail = Cocktail.create(
-    name: Faker::Cannabis.brand
-  )
-  puts "cocktail #{cocktail.id} created" 
-end
+puts "Creating ingredient..."
+Ingredient.create(name: "Rum")
+Ingredient.create(name: "Gin")
+Ingredient.create(name: "Mint leaves")
+Ingredient.create(name: "Rosmarin")
+Ingredient.create(name: "Sugar")
+Ingredient.create(name: "Salt")
+Ingredient.create(name: "Wishkey")
+Ingredient.create(name: "Lemon juice")
+Ingredient.create(name: "Orange juice")
+Ingredient.create(name: "Tomato")
+Ingredient.create(name: "Martini dry")
+Ingredient.create(name: "Vodka")
+puts "Seeding succesful"
 
 
 

@@ -1,20 +1,48 @@
-<h2><%= @cocktail.name %></h2> 
-<div>
-  <i class="fas fa-trash-alt"><%= link_to "Delete the drink", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %></i>
-  <%= link_to "Delete the drink", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.png' %>)">
+  <div class="container">
+    <h1>SAVING WATER BY DRINKING</h1>
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+<div class="cocktail-page-container">
+  <div class="cocktail-photo">
+    <img src="https://source.unsplash.com/cocktail" alt="">
+  </div>
+
+  <div class="cocktail-description">
+    <h1 class="cocktail-title">
+      <%= @cocktail.name %>
+    </h1>
+    <p class="cocktail-description-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos obcaecati, impedit eum cum at rem illum! Ducimus, aliquid accusantium culpa suscipit aspernatur id, sit velit nobis assumenda corporis magni doloremque?
+    </p>
+  </div>
+
+  <div class="cocktail-ingredients">
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li class="cocktail-dose"><%= dose.description %> <%= dose.ingredient.name %> 
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-dumpster-fire"></i>
+          <% end %>
+        </li>  
+      <% end %>
+
+        <li class="cocktail-dose">
+          <%= link_to new_cocktail_dose_path(@cocktail) do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </li>   
+    </ul>
+  </div>
+
 </div>
 
 
-<ul class="list-group">
-  <% @cocktail.doses.each do |dose| %>
-    <li class="list-group-item"><%= dose.description %> <%= dose.ingredient.name %> 
-    <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %> </li>
-  <% end %>
-</ul>
 
 
 
-<%= link_to "Add Ingredience", new_cocktail_dose_path(@cocktail) %>
 <%= link_to "Back", cocktails_path %>
 
 
