@@ -1,8 +1,12 @@
 .cards {
     width: 900px;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-basis: calc(960px * 999 - 100% * 999);
+    // grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+    // grid-template-columns: minmax(min-content, 300px) minmax(max-content, 1fr);
     grid-gap: 24px;
     padding-bottom: 24px;
     padding-top: 24px;
@@ -13,6 +17,7 @@
   border-width: 2px;
   border-color: lightgrey;
   border-radius: 5px;
+  width: 25%;
 }
 
 .card-title {

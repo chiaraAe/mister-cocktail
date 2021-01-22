@@ -24,13 +24,3 @@ Ingredient.create(name: "Vodka")
 puts "Seeding succesful"
 
 
-
-# #cocktail name
-# Faker::Cannabis.brand
-
-# # Doses
-# Faker::Food.measurement
-# Faker::Food.description
-
-# # ingredience name
-# Faker::Food.ingredient

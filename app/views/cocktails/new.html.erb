@@ -1,7 +1,22 @@
-<%= form_for(@cocktail) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.png' %>)">
+  <div class="container">
+    <h1>SAVE WATER</h1>
+    <h1>DRINK COCKTAILS</h1>
+    <%= link_to new_cocktail_path do %>
+      <i class="fas fa-cocktail"></i>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="form">
+  <%= form_for(@cocktail) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+
 
 <%= link_to "Back to main Page", cocktails_path %>

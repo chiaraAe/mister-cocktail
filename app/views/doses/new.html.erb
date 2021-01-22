@@ -1,5 +1,20 @@
-<%= simple_form_for [ @cocktail, @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Submit doses", class: "btn btn-primary" %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.png' %>)">
+  <div class="container">
+    <h1>SAVE WATER</h1>
+    <h1>DRINK COCKTAILS</h1>
+    <%= link_to new_cocktail_path do %>
+      <i class="fas fa-cocktail"></i>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="form">
+  <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Submit doses", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
